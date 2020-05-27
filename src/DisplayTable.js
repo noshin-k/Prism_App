@@ -13,12 +13,12 @@ class DisplayTable extends React.Component {
     };
   }
 
-  const list = [
-    {name: 'Table 1', version: 'Version 1', schema: 'SWH'},
-    {name: 'Table 2', version: 'Version 2', schema: 'SWH'},
-  ];
-
   render() {
+    const list = [
+        {name: 'Table 1', version: 'Version 1', schema: 'SWH'},
+        {name: 'Table 2', version: 'Version 2', schema: 'SWH'},
+      ];
+
     return (
       <div style={{ height: 400 }}>
         <AutoSizer>
@@ -28,7 +28,7 @@ class DisplayTable extends React.Component {
               height={height}
               headerHeight={20}
               rowHeight={30}
-              rowCount={this.list.length}
+              rowCount={list.length}
               rowGetter={({ index }) => list[index]}
             >
               <Column label="Table Name" dataKey="name" width={200} />
@@ -42,8 +42,5 @@ class DisplayTable extends React.Component {
   }
 
 }
-
-// Render your table
-ReactDOM.render(<DisplayTable />, document.getElementById("root"));
 
 export default DisplayTable;
